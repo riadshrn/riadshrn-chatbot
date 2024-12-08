@@ -1,0 +1,259 @@
+/* Styles globaux */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #4f94d4, #1e81b0);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Ecran caché */
+.hidden {
+    display: none;
+}
+
+/* Formulaire d'accueil */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+input {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.primary-button {
+    padding: 12px 20px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.primary-button:active {
+    transform: scale(0.95);
+}
+
+/* Titre du chat */
+.chat-header {
+    width: 100%;
+    background: #0056b3;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Conteneur principal */
+.main-container {
+    display: flex;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Section gauche : Scores et utilisateurs */
+.sidebar {
+    width: 40%;
+    background: #c3c3c36d;
+    padding: 15px;
+    border-right: 2px solid #ddd;
+    overflow-y: auto;
+}
+
+/* Score du chat */
+.chat-score {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Liste des utilisateurs */
+.users-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.users-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+.users-container li:hover {
+    background: #e6e6e6;
+}
+
+/* Section droite : Chat */
+.chat-container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 400px; /* Fixe la hauteur de la boîte de chat */
+    padding: 20px;
+    overflow-y: auto; /* Permet le défilement vertical */
+}
+
+/* Chat box */
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Permet le défilement vertical */
+    background: #f9f9f9;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #454545 #f1f1f1;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 8px; /* Largeur de la barre de défilement */
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: #007BFF; /* Couleur de la barre de défilement */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Couleur de l'arrière-plan de la barre */
+}
+
+/* Input Section */
+.input-container {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 2px solid #ddd;
+}
+
+.input-box {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.send-button {
+    padding: 12px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.send-button:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+.send-button:active {
+    transform: scale(0.95);
+}
+
+
+
+/* Messages */
+.chat-box .message {
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 60%; /* Largeur maximale d'un message */
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.chat-box .message.sent {
+    align-self: flex-end; /* Aligner les messages de l'utilisateur courant à droite */
+    background-color: #007bff;
+    color: white;
+    text-align: right;
+}
+
+.chat-box .message.received {
+    align-self: flex-start; /* Aligner les messages des autres utilisateurs à gauche */
+    background-color: #bababa;
+    color: #333;
+    text-align: left;
+}
+
+
+
+
+
+
+
+/* Overlay pour la phrase motivante */
+#motivational-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Animation pour le fondu */
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+
+

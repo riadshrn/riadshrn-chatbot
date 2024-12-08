@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ecran d'accueil -->
+    <div id="welcome-screen" class="screen">
+        <h1>Bienvenue dans le Chat</h1>
+        <div class="form-container">
+            <input id="username" type="text" placeholder="Votre nom" required>
+            <input id="room" type="text" placeholder="Nom de la salle" required>
+            <button class="primary-button" onclick="joinRoom()">Rejoindre</button>
+        </div>
+    </div>
+
+    <!-- Ecran de chat -->
+    <div id="chat-section" class="screen hidden">
+        <!-- Titre du chat -->
+        <div class="chat-header">
+            ChatRoom : <span id="room-name"></span>
+        </div>
+    
+        <!-- Conteneur principal -->
+        <div class="main-container">
+            <!-- Score du chat et liste des utilisateurs -->
+            <div class="sidebar">
+                <div class="chat-score" id="chat-score">Score moyen du chat : 0.00</div>
+                <h3>Utilisateurs</h3>
+                <ul class="users-list" id="users-list"></ul>
+            </div>
+    
+            <!-- Zone de discussion -->
+            <div class="chat-container">
+                <div class="chat-box" id="chat-box"></div>
+                <div class="input-container">
+                    <input id="message" class="input-box" placeholder="Votre message">
+                    <button class="send-button" onclick="sendMessage()">Envoyer</button>
+                </div>
+            </div>
+        </div>
+        <div id="motivational-overlay" class="hidden">
+            <p id="motivational-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

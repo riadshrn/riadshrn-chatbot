@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+azure-ai-textanalytics
+azure-core
+azure-data-tables
+WebSocket
+gunicorn
+datetime
